@@ -44,18 +44,22 @@ autocmd({ "BufWritePre" }, {
 	desc = "Format on save",
 	group = files_group,
 	callback = function()
-		-- Call AutoFormat
+		-- Call Format command from formatter.nvim
 		vim.cmd("Format")
 	end,
 })
 
 -- Indent
 autocmd({ "BufReadPre", "BufNewFile" }, {
-	desc = "Indent",
+	desc = "Enable Treesitter highlighting",
 	group = indent_group,
 	pattern = "*",
 	callback = function()
-		vim.cmd("TSEnable highlight")
+		-- Check if Treesitter is available before enabling
+		local ok, _ = pcall(require, "nvim-treesitter")
+		if ok then
+			vim.cmd("TSEnable highlight")
+		end
 	end,
 })
 
@@ -66,3 +70,8 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 		pcall(require("lint").try_lint)
 	end,
 })
+
+-- Create AutoFormat command for compatibility
+vim.api.nvim_create_user_command("AutoFormat", function()
+	vim.cmd("Format")
+end, { desc = "Format current buffer using formatter.nvim" })

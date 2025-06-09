@@ -64,7 +64,7 @@ map("n", "<Leader>c", ":BufferClose<CR>", opts)
 --                 :BufferCloseBuffersLeft<CR>
 --                 :BufferCloseBuffersRight<CR>
 -- Magic buffer-picking mode
-map("n", "<C-p>", ":BufferPick<CR>", opts)
+map("n", "<Leader>p", ":BufferPick<CR>", opts)
 -- Sort automatically by...
 map("n", "<Space>bb", ":BufferOrderByBufferNumber<CR>", opts)
 map("n", "<Space>bd", ":BufferOrderByDirectory<CR>", opts)
@@ -76,10 +76,12 @@ map("n", "<Space>bl", ":BufferOrderByLanguage<CR>", opts)
 
 -- Toggle Neotree
 map({ "n", "v", "i" }, "<C-b>", "<cmd>Neotree toggle<CR>", opts)
-map({ "n", "v" }, "<F3>", "<cmd>AutoFormat<CR>", opts)
 
--- FZF
+-- Format current buffer
+map({ "n", "v" }, "<F3>", "<cmd>Format<CR>", opts)
+
+-- FZF fuzzy finder
 map({ "n", "v", "i" }, "<C-p>", "<cmd>FZF<CR>", opts)
 
--- Rename
+-- LSP Rename
 map({"n", "v", "i"}, "<F2>", function() vim.lsp.buf.rename() end, opts)

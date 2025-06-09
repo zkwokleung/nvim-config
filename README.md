@@ -197,6 +197,16 @@ The configuration uses `;` as the leader key and includes mappings for:
 - `<leader>xL` - Toggle location list
 - `<leader>xQ` - Toggle quickfix list
 
+### File Operations
+- `<C-p>` - FZF fuzzy finder
+- `<C-b>` - Toggle Neo-tree file explorer
+- `<F3>` - Format current buffer
+- `<F2>` - LSP rename symbol
+
+### Buffer Management
+- `<leader>p` - Buffer pick (interactive buffer selection)
+- `<leader>c` - Close current buffer
+
 ### AI Assistance
 - `<T>` (Insert mode) - Accept GitHub Copilot suggestion
 
