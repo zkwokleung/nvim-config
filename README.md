@@ -191,6 +191,7 @@ nvim-config/
 - **telescope.nvim** - Extensible fuzzy finder & pickers
 - **harpoon** - Quick file bookmarking & navigation
 - **neovim-session-manager** - Auto save/restore sessions
+- **nvim-spectre** - Search & replace across multiple files
 - **ale** - Asynchronous Lint Engine
 - **dense-analysis/ale** - Additional linting and fixing
 
@@ -214,6 +215,7 @@ The configuration uses `;` as the leader key and includes mappings for:
 - `<leader>fg` - Live grep with Telescope
 - `<leader>fb` - List open buffers with Telescope
 - `<leader>fh` - Help tags picker
+- `<leader>f` - Global search & replace (Spectre)
 - `<C-b>` - Toggle Neo-tree file explorer
 - `<F3>` - Format current buffer
 - `<F2>` - Incremental LSP rename

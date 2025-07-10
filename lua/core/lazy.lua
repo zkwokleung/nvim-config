@@ -285,6 +285,15 @@ require("lazy").setup({
 		"github/copilot.vim",
 		event = "InsertEnter",
 	},
+	-- Search & Replace
+	{
+		"nvim-pack/nvim-spectre",
+		cmd = "Spectre",
+		keys = {
+			{ "<leader>f", function() require("spectre").toggle() end, desc = "Spectre - Search & Replace" },
+		},
+		opts = {},
+	},
 }, {
 	concurrency = 8,
 	performance = {
