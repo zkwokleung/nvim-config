@@ -80,8 +80,21 @@ map({ "n", "v", "i" }, "<C-b>", "<cmd>Neotree toggle<CR>", opts)
 -- Format current buffer
 map({ "n", "v" }, "<F3>", "<cmd>Format<CR>", opts)
 
--- FZF fuzzy finder
-map({ "n", "v", "i" }, "<C-p>", "<cmd>FZF<CR>", opts)
+-- Telescope finder
+map({ "n", "v", "i" }, "<C-p>", "<cmd>Telescope find_files<CR>", opts)
+
+-- Telescope additional pickers
+map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
+map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
+map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
+
+-- Harpoon mappings
+map("n", "<leader>ha", function() require("harpoon.mark").add_file() end, opts)
+map("n", "<leader>hm", function() require("harpoon.ui").toggle_quick_menu() end, opts)
+map("n", "<leader>h1", function() require("harpoon.ui").nav_file(1) end, opts)
+map("n", "<leader>h2", function() require("harpoon.ui").nav_file(2) end, opts)
+map("n", "<leader>h3", function() require("harpoon.ui").nav_file(3) end, opts)
+map("n", "<leader>h4", function() require("harpoon.ui").nav_file(4) end, opts)
 
 -- LSP Rename
 map({"n", "v", "i"}, "<F2>", function() vim.lsp.buf.rename() end, opts)

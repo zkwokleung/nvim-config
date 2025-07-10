@@ -211,6 +211,55 @@ require("lazy").setup({
 		config = true,
 	},
 
+	-- Navigation & Productivity
+	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		cmd = "Telescope",
+		keys = {
+			{ "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Telescope Find Files" },
+		},
+		config = function()
+			require("telescope").setup {}
+		end,
+	},
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {},
+		keys = {
+			{ "s", function() require("flash").jump() end, mode = { "n", "x", "o" }, desc = "Flash Jump" },
+			{ "S", function() require("flash").treesitter() end, mode = { "n", "x", "o" }, desc = "Flash Treesitter" },
+		},
+	},
+	{
+		"haringsrob/nvim_context_vt",
+		event = "BufReadPost",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		config = function()
+			require("nvim_context_vt").setup {}
+		end,
+	},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		event = "VeryLazy",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{
+		"Shatur/neovim-session-manager",
+		event = "BufWinEnter",
+		config = function()
+			require("session_manager").setup {
+				autosave_last_session = true,
+				autosave_ignore_not_normal = true,
+				autosave_ignore_filetypes = { "gitcommit", "gitrebase" },
+				autosave_only_in_session = false,
+			}
+		end,
+	},
+
 	-- AI Assistance
 	{
 		"github/copilot.vim",
