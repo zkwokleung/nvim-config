@@ -205,11 +205,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"folke/tint.nvim",
-		event = "VeryLazy",
-		config = true,
-	},
-	{
 		"lukas-reineke/headlines.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		ft = { "markdown", "org", "norg", "rmd" },
