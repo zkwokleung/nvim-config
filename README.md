@@ -112,6 +112,9 @@ nvim-config/
   - `cmp-path` - Path completions
   - `cmp-nvim-lua` - Lua API completions
   - `cmp-cmdline` - Command line completions
+- **none-ls.nvim** - Inject external linters/formatters via a unified LSP
+- **lsp_signature.nvim** - Inline function signature help
+- **inc-rename.nvim** - Live, incremental LSP renaming
 
 #### Supported Language Servers
 - **clangd** - C/C++
@@ -166,6 +169,10 @@ nvim-config/
 - **tokyonight.nvim** - Colorscheme
 - **barbar.nvim** - Tab bar
 - **which-key.nvim** - Key binding hints
+- **dressing.nvim** - Better vim.ui pop-ups
+- **tint.nvim** - Dim inactive windows
+- **nvim-colorizer.lua** - Inline colour previews
+- **headlines.nvim** - Pretty markdown/Org headers
 
 ### Code Editing & Navigation
 - **Comment.nvim** - Smart commenting
@@ -176,9 +183,14 @@ nvim-config/
 - **nvim-autopairs** - Auto-close brackets and quotes
 - **vim-visual-multi** - Multiple cursors
 - **vim-signature** - Mark visualization
+- **flash.nvim** - Lightning-fast jump/search
+- **nvim-context-vt** - Shows current code context at top
 
 ### Productivity Tools
-- **fzf** - Fuzzy finder
+- **fzf** - Fuzzy finder (fallback)
+- **telescope.nvim** - Extensible fuzzy finder & pickers
+- **harpoon** - Quick file bookmarking & navigation
+- **neovim-session-manager** - Auto save/restore sessions
 - **ale** - Asynchronous Lint Engine
 - **dense-analysis/ale** - Additional linting and fixing
 
@@ -198,10 +210,18 @@ The configuration uses `;` as the leader key and includes mappings for:
 - `<leader>xQ` - Toggle quickfix list
 
 ### File Operations
-- `<C-p>` - FZF fuzzy finder
+- `<C-p>` - Telescope file finder
+- `<leader>fg` - Live grep with Telescope
+- `<leader>fb` - List open buffers with Telescope
+- `<leader>fh` - Help tags picker
 - `<C-b>` - Toggle Neo-tree file explorer
 - `<F3>` - Format current buffer
-- `<F2>` - LSP rename symbol
+- `<F2>` - Incremental LSP rename
+
+### Harpoon
+- `<leader>ha` - Add file to Harpoon list
+- `<leader>hm` - Toggle Harpoon menu
+- `<leader>h1` … `<leader>h4` - Jump to files 1-4
 
 ### Buffer Management
 - `<leader>p` - Buffer pick (interactive buffer selection)
