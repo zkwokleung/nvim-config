@@ -260,6 +260,24 @@ require("lazy").setup({
 		end,
 	},
 
+	-- LSP Enhancements
+	{
+		"nvimtools/none-ls.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "LspAttach",
+		config = function()
+			require("lsp_signature").setup()
+		end,
+	},
+	{
+		"smjonas/inc-rename.nvim",
+		cmd = "IncRename",
+		config = true,
+	},
+
 	-- AI Assistance
 	{
 		"github/copilot.vim",

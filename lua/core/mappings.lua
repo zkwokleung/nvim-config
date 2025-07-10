@@ -97,4 +97,9 @@ map("n", "<leader>h3", function() require("harpoon.ui").nav_file(3) end, opts)
 map("n", "<leader>h4", function() require("harpoon.ui").nav_file(4) end, opts)
 
 -- LSP Rename
-map({"n", "v", "i"}, "<F2>", function() vim.lsp.buf.rename() end, opts)
+-- Incremental Rename (inc-rename)
+map("n", "<F2>", function()
+    return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true, silent = true })
+-- Quick code action
+map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
