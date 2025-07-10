@@ -40,6 +40,7 @@ require("lazy").setup({
 	-- UI
 	{
 		"goolord/alpha-nvim",
+		event = "VimEnter",
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -48,6 +49,7 @@ require("lazy").setup({
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
+		cmd = "Neotree",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -281,5 +283,11 @@ require("lazy").setup({
 	-- AI Assistance
 	{
 		"github/copilot.vim",
+		event = "InsertEnter",
+	},
+}, {
+	concurrency = 8,
+	performance = {
+		cache = { enabled = true },
 	},
 })
