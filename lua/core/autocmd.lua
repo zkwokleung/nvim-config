@@ -71,6 +71,14 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 	end,
 })
 
+-- Highlight on yank
+autocmd("TextYankPost", {
+    group = files_group,
+    callback = function()
+        vim.highlight.on_yank { timeout = 150 }
+    end,
+})
+
 -- Create AutoFormat command for compatibility
 vim.api.nvim_create_user_command("AutoFormat", function()
 	vim.cmd("Format")

@@ -192,6 +192,30 @@ require("lazy").setup({
 		"folke/which-key.nvim",
 	},
 
+	-- UI Polish Plugins
+	{
+		"stevearc/dressing.nvim",
+		event = "VeryLazy",
+	},
+	{
+		"norcalli/nvim-colorizer.lua",
+		event = "VeryLazy",
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
+	{
+		"folke/tint.nvim",
+		event = "VeryLazy",
+		config = true,
+	},
+	{
+		"lukas-reineke/headlines.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		ft = { "markdown", "org", "norg", "rmd" },
+		config = true,
+	},
+
 	-- AI Assistance
 	{
 		"github/copilot.vim",
