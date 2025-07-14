@@ -107,7 +107,7 @@ end, opts)
 
 -- LSP Rename
 -- Incremental Rename (inc-rename)
-map("n", "<leader>2", function()
+map("n", "<leader><F2>", function()
     return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true, silent = true })
 -- Quick code action
