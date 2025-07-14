@@ -36,8 +36,8 @@ map("n", "<Leader>?", "<cmd>ALEFixSuggest<CR>", opts)
 
 -- barbar tabline
 -- Move to previous/next
--- map("n", "<Leader>,", "<cmd>BufferPrevious<CR>", opts)
--- map("n", "<Leader>.", "<cmd>BufferNext<CR>", opts)
+map("n", "<Leader><Tab>", "<cmd>BufferNext<CR>", opts)
+map("n", "<Leader><S-Tab>", "<cmd>BufferPrevious<CR>", opts)
 -- Re-order to previous/next
 map("n", "<Leader><", "<cmd>BufferMovePrevious<CR>", opts)
 map("n", "<Leader>>", "<cmd>BufferMoveNext<CR>", opts)
