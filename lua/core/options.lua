@@ -31,6 +31,7 @@ local options = {
 		preserveindent = true, -- preserve indent structure as much as possible
 		pumheight = 10, -- height of the pop up menu
 		relativenumber = true, -- show relative numberline
+		scrolloff = 999, -- number of lines before and after the cursor
 		shiftwidth = 4, -- number of space inserted for indentation
 		showmode = false, -- disable showing modes in command line
 		showtabline = 2, -- always display tabline
