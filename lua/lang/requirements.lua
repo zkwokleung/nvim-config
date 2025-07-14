@@ -9,6 +9,7 @@ M.lsps = {
     'eslint',
     'ts_ls',
     'tailwindcss',
+    'intelephense',
 }
 
 M.linters = {
@@ -20,6 +21,7 @@ M.linters = {
     'shellcheck',
     'vint',
     'yamllint',
+    'phpstan',
 }
 
 M.linters_by_ft = {
@@ -35,6 +37,7 @@ M.linters_by_ft = {
     kotlin = { 'ast-grep' },
     lua = { 'ast-grep' },
     markdown = { 'markdownlint' },
+    php = { 'phpstan' },
     python = { 'flake8' },
     sass = { 'stylelint' },
     scss = { 'stylelint' },
