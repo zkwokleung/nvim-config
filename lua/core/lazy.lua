@@ -254,7 +254,7 @@ require("lazy").setup({
                 desc = "Flash Jump",
             },
             {
-                "S",
+                "<leader>s",
                 function()
                     require("flash").treesitter()
                 end,

@@ -34,10 +34,6 @@ map("n", "<Leader><Space>", "<cmd>nohl<CR>", opts)
 -- ALE fix
 map("n", "<Leader>?", "<cmd>ALEFixSuggest<CR>", opts)
 
--- barbar tabline
--- Move to previous/next
-map("n", "<Leader><Tab>", "<cmd>BufferNext<CR>", opts)
-map("n", "<Leader><S-Tab>", "<cmd>BufferPrevious<CR>", opts)
 -- Re-order to previous/next
 map("n", "<Leader><", "<cmd>BufferMovePrevious<CR>", opts)
 map("n", "<Leader>>", "<cmd>BufferMoveNext<CR>", opts)
@@ -117,3 +113,6 @@ map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 map("n", "<leader>f", function()
     require("spectre").toggle()
 end, opts)
+
+-- Disable command-line window
+map("n", "q:", "<nop>", opts)
