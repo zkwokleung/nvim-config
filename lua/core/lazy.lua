@@ -184,6 +184,11 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
     },
+    {
+        "morhetz/gruvbox",
+        lazy = false,
+        priority = 1000,
+    },
 
     -- Make your life easier
     {
