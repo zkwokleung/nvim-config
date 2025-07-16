@@ -1,3 +1,7 @@
+-- Disable netrw at the very start
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 require("neo-tree").setup({
 	close_if_last_window = true,
 	popup_border_style = "rounded",
