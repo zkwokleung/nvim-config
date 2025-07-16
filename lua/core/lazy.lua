@@ -237,7 +237,42 @@ require("lazy").setup({
             { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Telescope Find Files" },
         },
         config = function()
-            require("telescope").setup({})
+            require("telescope").setup({
+                defaults = {
+                    file_ignore_patterns = {
+                        "%.git/",
+                        "node_modules/",
+                        "%.cache/",
+                        "%.local/share/",
+                        "%.npm/",
+                        "%.cargo/",
+                    },
+                    hidden = true,
+                },
+                pickers = {
+                    find_files = {
+                        hidden = true,
+                        find_command = {
+                            "rg",
+                            "--files",
+                            "--hidden",
+                            "--glob",
+                            "!**/.git/*",
+                            "--glob",
+                            "!**/node_modules/*",
+                            "--glob",
+                            "!**/.cache/*",
+                            "--glob",
+                            "!**/.local/share/*",
+                        },
+                    },
+                    live_grep = {
+                        additional_args = function()
+                            return { "--hidden", "--glob", "!**/.git/*" }
+                        end,
+                    },
+                },
+            })
         end,
     },
     {
