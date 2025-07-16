@@ -24,10 +24,6 @@ map("v", "<A-K>", "<cmd>copy '<<CR>gv=gv", opts)
 map("i", "<C-j>", "<Esc>o", opts)
 map("i", "<C-k>", "<Esc>O", opts)
 
--- Navigation
-map("i", "<C-h>", "<Esc>^i", opts)
-map("i", "<C-l>", "<Esc>$a", opts)
-
 -- Escaping
 map("n", "<Leader><Space>", "<cmd>nohl<CR>", opts)
 
@@ -41,25 +37,17 @@ map("n", "<Leader>.", "<cmd>BufferNext<CR>", opts)
 -- Re-order to previous/next
 map("n", "<Leader><", "<cmd>BufferMovePrevious<CR>", opts)
 map("n", "<Leader>>", "<cmd>BufferMoveNext<CR>", opts)
--- Goto buffer in position...
-map("n", "<Leader>1", "<cmd>BufferGoto 1<CR>", opts)
-map("n", "<Leader>2", "<cmd>BufferGoto 2<CR>", opts)
-map("n", "<Leader>3", "<cmd>BufferGoto 3<CR>", opts)
-map("n", "<Leader>4", "<cmd>BufferGoto 4<CR>", opts)
-map("n", "<Leader>5", "<cmd>BufferGoto 5<CR>", opts)
-map("n", "<Leader>6", "<cmd>BufferGoto 6<CR>", opts)
-map("n", "<Leader>7", "<cmd>BufferGoto 7<CR>", opts)
-map("n", "<Leader>8", "<cmd>BufferGoto 8<CR>", opts)
-map("n", "<Leader>9", "<cmd>BufferGoto 9<CR>", opts)
-map("n", "<Leader>0", "<cmd>BufferLast<CR>", opts)
+
 -- Close buffer
 map("n", "<Leader>c", "<cmd>BufferClose<CR>", opts)
+
 -- Wipeout buffer
 --                 <cmd>BufferWipeout<CR>
 -- Close commands
 --                 <cmd>BufferCloseAllButCurrent<CR>
 --                 <cmd>BufferCloseBuffersLeft<CR>
 --                 <cmd>BufferCloseBuffersRight<CR>
+
 -- Magic buffer-picking mode
 map("n", "<Leader>p", "<cmd>BufferPick<CR>", opts)
 -- Sort automatically by...
@@ -67,15 +55,8 @@ map("n", "<Space>bb", "<cmd>BufferOrderByBufferNumber<CR>", opts)
 map("n", "<Space>bd", "<cmd>BufferOrderByDirectory<CR>", opts)
 map("n", "<Space>bl", "<cmd>BufferOrderByLanguage<CR>", opts)
 
--- Other<cmd>
--- <cmd>BarbarEnable - enables barbar (enabled by default)
--- <cmd>BarbarDisable - very bad command, should never be used
-
 -- Toggle Neotree
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
-
--- Format current buffer
-map({ "n", "v" }, "<F3>", "<cmd>Format<CR>", opts)
 
 -- Telescope finder
 map({ "n", "v", "i" }, "<C-p>", "<cmd>Telescope find_files<CR>", opts)
@@ -107,7 +88,7 @@ end, opts)
 
 -- LSP Rename
 -- Incremental Rename (inc-rename)
-map("n", "<leader><F2>", function()
+map("n", "<leader>r", function()
     return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true, silent = true })
 -- Quick code action
