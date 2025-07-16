@@ -27,6 +27,7 @@ local ui = {
     "ui/statusline",
     "ui/theme",
     "ui/tree",
+    "plugins/barbar",
 }
 
 local helper = {}

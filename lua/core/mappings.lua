@@ -34,6 +34,10 @@ map("n", "<Leader><Space>", "<cmd>nohl<CR>", opts)
 -- ALE fix
 map("n", "<Leader>?", "<cmd>ALEFixSuggest<CR>", opts)
 
+-- Buffer
+map("n", "<Leader>,", "<cmd>BufferPrevious<CR>", opts)
+map("n", "<Leader>.", "<cmd>BufferNext<CR>", opts)
+
 -- Re-order to previous/next
 map("n", "<Leader><", "<cmd>BufferMovePrevious<CR>", opts)
 map("n", "<Leader>>", "<cmd>BufferMoveNext<CR>", opts)
