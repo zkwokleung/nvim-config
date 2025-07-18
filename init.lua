@@ -30,7 +30,9 @@ local ui = {
     "plugins/barbar",
 }
 
-local helper = {}
+local helper = {
+    "helper/sessions",
+}
 
 -- Load my configs
 
