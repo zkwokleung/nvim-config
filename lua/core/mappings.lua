@@ -34,19 +34,11 @@ map("n", "<Leader>?", "<cmd>ALEFixSuggest<CR>", opts)
 map("n", "<Leader>,", "<cmd>BufferPrevious<CR>", opts)
 map("n", "<Leader>.", "<cmd>BufferNext<CR>", opts)
 
--- Re-order to previous/next
+-- Buffer Navigation
 map("n", "<Leader><", "<cmd>BufferMovePrevious<CR>", opts)
 map("n", "<Leader>>", "<cmd>BufferMoveNext<CR>", opts)
-
--- Close buffer
+map("n", "<Leader>o", "<cmd>BufferCloseAllButCurrent<CR>", opts)
 map("n", "<Leader>c", "<cmd>BufferClose<CR>", opts)
-
--- Wipeout buffer
---                 <cmd>BufferWipeout<CR>
--- Close commands
---                 <cmd>BufferCloseAllButCurrent<CR>
---                 <cmd>BufferCloseBuffersLeft<CR>
---                 <cmd>BufferCloseBuffersRight<CR>
 
 -- Magic buffer-picking mode
 map("n", "<Leader>p", "<cmd>BufferPick<CR>", opts)
