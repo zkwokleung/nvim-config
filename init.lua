@@ -27,6 +27,10 @@ local ui = {
     "ui/statusline",
     "ui/theme",
     "ui/tree",
+}
+
+local plugins = {
+    "plugins/treesitter",
     "plugins/barbar",
 }
 
@@ -45,6 +49,10 @@ for _, v in ipairs(lang) do
 end
 
 for _, v in ipairs(ui) do
+    require(v)
+end
+
+for _, v in ipairs(plugins) do
     require(v)
 end
 
