@@ -72,10 +72,10 @@ nvim-config/
     │   ├── comments.lua    # Comment highlighting
     │   └── indent.lua      # Indentation guides
     ├── plugins/             # Individual plugin configurations
-    │   ├── neo-tree.lua    # Neo-tree specific config
+    │   ├── neo-tree.lua    # Neo-tree specific config (references ui/tree.lua)
     │   └── treesitter.lua  # Treesitter config
     └── helper/              # Helper utilities
-        └── copilot.lua     # GitHub Copilot integration
+        └── sessions.lua    # Session management
 ```
 
 ## 🔧 Configuration Overview
@@ -86,7 +86,7 @@ nvim-config/
 - **Local Leader**: `<Space>`
 - **Plugin Manager**: [Lazy.nvim](https://github.com/folke/lazy.nvim)
 - **Package Manager**: [Mason.nvim](https://github.com/williamboman/mason.nvim)
-- **Theme**: Tokyo Night (Night variant)
+- **Themes**: Tokyo Night (Night variant) and Gruvbox
 
 ### Key Settings
 
@@ -125,6 +125,7 @@ nvim-config/
 - **eslint** - JavaScript/TypeScript linting
 - **ts_ls** - TypeScript/JavaScript
 - **tailwindcss** - Tailwind CSS
+- **intelephense** - PHP
 
 #### Linters
 - **ast-grep** - Multi-language structural search
@@ -135,6 +136,7 @@ nvim-config/
 - **shellcheck** - Shell scripts
 - **vint** - Vimscript
 - **yamllint** - YAML
+- **phpstan** - PHP
 
 #### Formatters
 - **clang-format** - C/C++
@@ -157,7 +159,7 @@ nvim-config/
 - **nvim-treesitter** - Syntax highlighting and text objects
 - **LuaSnip** - Snippet engine
 - **nvim-lint** - Asynchronous linting
-- **formatter.nvim** - Code formatting
+- **formatter.nvim** - Code formatting (with LSP formatting integration)
 
 ### UI & Interface
 - **alpha-nvim** - Dashboard/start screen
@@ -167,6 +169,7 @@ nvim-config/
 - **nvim-notify** - Notification manager
 - **indent-blankline.nvim** - Indentation guides
 - **tokyonight.nvim** - Colorscheme
+- **gruvbox.nvim** - Alternative colorscheme
 - **barbar.nvim** - Tab bar
 - **which-key.nvim** - Key binding hints
 - **dressing.nvim** - Better vim.ui pop-ups
@@ -195,8 +198,6 @@ nvim-config/
 - **ale** - Asynchronous Lint Engine
 - **dense-analysis/ale** - Additional linting and fixing
 
-### AI Assistance
-- **GitHub Copilot** integration (key mapping: `<T>` in insert mode)
 
 ## ⌨️ Key Mappings
 
@@ -212,13 +213,13 @@ The configuration uses `;` as the leader key and includes mappings for:
 
 ### File Operations
 - `<C-p>` - Telescope file finder
-- `<leader>fg` - Live grep with Telescope
+- `<leader>/` - Live grep with Telescope
 - `<leader>fb` - List open buffers with Telescope
 - `<leader>fh` - Help tags picker
 - `<leader>f` - Global search & replace (Spectre)
-- `<C-b>` - Toggle Neo-tree file explorer
-- `<F3>` - Format current buffer
-- `<F2>` - Incremental LSP rename
+- `<leader>e` - Toggle Neo-tree file explorer
+- `<leader>r` - Incremental LSP rename
+- `<leader>ca` - LSP code actions
 
 ### Harpoon
 - `<leader>ha` - Add file to Harpoon list
@@ -228,9 +229,11 @@ The configuration uses `;` as the leader key and includes mappings for:
 ### Buffer Management
 - `<leader>p` - Buffer pick (interactive buffer selection)
 - `<leader>c` - Close current buffer
+- `<leader>,` - Previous buffer
+- `<leader>.` - Next buffer
+- `<leader><` - Move buffer left
+- `<leader>>` - Move buffer right
 
-### AI Assistance
-- `<T>` (Insert mode) - Accept GitHub Copilot suggestion
 
 *For complete key mappings, see `lua/core/mappings.lua`*
 
