@@ -1,12 +1,30 @@
+-- Custom theme for winbar
+local custom_theme = require("lualine.themes.auto")
+custom_theme.normal.c.bg = "#2d3149"
+custom_theme.inactive.c.bg = "#24283b"
+
 require("lualine").setup({
     options = {
         icons_enabled = true,
-        theme = "auto",
+        theme = custom_theme,
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
             statusline = {},
-            winbar = {},
+            winbar = {
+                "neo-tree",
+                "alpha",
+                "help",
+                "trouble",
+                "spectre_panel",
+                "qf",
+                "fugitive",
+                "packer",
+                "lazy",
+                "mason",
+                "TelescopePrompt",
+                "harpoon",
+            },
         },
         ignore_focus = {},
         always_divide_middle = true,
@@ -55,7 +73,45 @@ require("lualine").setup({
         lualine_z = {},
     },
     tabline = {},
-    winbar = {},
-    inactive_winbar = {},
+    winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
+            {
+                "filename",
+                path = 1, -- Show relative path
+                symbols = {
+                    modified = " ●",
+                    readonly = " ",
+                    unnamed = "[No Name]",
+                },
+            },
+        },
+        lualine_x = {
+            {
+                "diagnostics",
+                sources = { "nvim_lsp" },
+                symbols = { error = " ", warn = " ", info = " ", hint = " " },
+                colored = true,
+            },
+            "filetype",
+        },
+        lualine_y = {},
+        lualine_z = {},
+    },
+    inactive_winbar = {
+        lualine_c = {
+            {
+                "filename",
+                path = 1,
+                color = { fg = "#6c7086" }, -- Dimmed text for inactive
+                symbols = {
+                    modified = " ●",
+                    readonly = " ",
+                    unnamed = "[No Name]",
+                },
+            },
+        },
+    },
     extensions = { "neo-tree", "trouble", "lazy" },
 })
