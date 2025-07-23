@@ -19,7 +19,29 @@ require("lualine").setup({
     },
     sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_b = {
+            {
+                function()
+                    local reg = vim.fn.reg_recording()
+                    if reg == "" then
+                        return ""
+                    else
+                        return "(⏺) " .. reg .. " "
+                    end
+                end,
+                color = { fg = "#1a1b26", bg = "#f7768e", gui = "bold" },
+                separator = { right = "", left = "" },
+                cond = function()
+                    return vim.fn.reg_recording() ~= ""
+                end,
+            },
+        },
+        lualine_c = {
+            "branch",
+            "diff",
+            "diagnostics",
+            "filename",
+        },
         lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_y = { "progress" },
         lualine_z = { "location" },
