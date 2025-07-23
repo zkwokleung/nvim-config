@@ -80,7 +80,7 @@ end, opts)
 -- Incremental Rename (inc-rename)
 map("n", "<leader>r", function()
     return ":IncRename " .. vim.fn.expand("<cword>")
-end, { expr = true, silent = true })
+end, { expr = true })
 -- Quick code action
 map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
