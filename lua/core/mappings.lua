@@ -54,9 +54,7 @@ map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
 map({ "n", "v", "i" }, "<C-p>", "<cmd>Telescope find_files<CR>", opts)
 
 -- Telescope additional pickers
-map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
-map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
+map("n", "<leader>/", "<cmd>Telescope live_grep<CR>", opts)
 
 -- Harpoon mappings
 map("n", "<leader>ha", function()
@@ -85,11 +83,6 @@ map("n", "<leader>r", function()
 end, { expr = true, silent = true })
 -- Quick code action
 map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-
--- Global search & replace (Spectre)
-map("n", "<leader>f", function()
-    require("spectre").toggle()
-end, opts)
 
 -- Disable command-line window
 map("n", "q:", "<nop>", opts)
