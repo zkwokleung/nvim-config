@@ -1,12 +1,7 @@
--- Custom theme for winbar
-local custom_theme = require("lualine.themes.auto")
-custom_theme.normal.c.bg = "#2d3149"
-custom_theme.inactive.c.bg = "#24283b"
-
 require("lualine").setup({
     options = {
         icons_enabled = true,
-        theme = custom_theme,
+        theme = "auto",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
@@ -74,42 +69,87 @@ require("lualine").setup({
     },
     tabline = {},
     winbar = {
-        lualine_a = {},
-        lualine_b = {},
+        lualine_a = {
+            {
+                function()
+                    -- Get file icon and name
+                    local filename = vim.fn.expand("%:t")
+                    if filename == "" then
+                        return "  [No Name]"
+                    end
+
+                    local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
+                    if devicons_ok then
+                        local icon, icon_color = devicons.get_icon(filename, vim.fn.expand("%:e"), { default = true })
+                        return string.format("   %s %s ", icon or "󰈔", filename)
+                    else
+                        return string.format("   󰈔 %s ", filename)
+                    end
+                end,
+                color = { gui = "bold" },
+                padding = { left = 1, right = 0 },
+                separator = { right = "" },
+            },
+        },
+        lualine_b = {
+            {
+                function()
+                    local filepath = vim.fn.expand("%:h")
+                    if filepath == "" or filepath == "." then
+                        return ""
+                    end
+                    return string.format(" %s", filepath)
+                end,
+                color = { fg = "#7aa2f7" },
+                padding = { left = 0, right = 1 },
+                separator = { right = "" },
+            },
+        },
         lualine_c = {
             {
-                "filename",
-                path = 1, -- Show relative path
-                symbols = {
-                    modified = " ●",
-                    readonly = " ",
-                    unnamed = "[No Name]",
-                },
+                function()
+                    if vim.bo.modified then
+                        return "●"
+                    elseif vim.bo.readonly then
+                        return ""
+                    else
+                        return ""
+                    end
+                end,
+                color = function()
+                    if vim.bo.modified then
+                        return { fg = "#f7768e" }
+                    else
+                        return { fg = "#9ece6a" }
+                    end
+                end,
+                padding = { left = 1, right = 1 },
             },
         },
-        lualine_x = {
-            {
-                "diagnostics",
-                sources = { "nvim_lsp" },
-                symbols = { error = " ", warn = " ", info = " ", hint = " " },
-                colored = true,
-            },
-            "filetype",
-        },
+        lualine_x = {},
         lualine_y = {},
         lualine_z = {},
     },
     inactive_winbar = {
         lualine_c = {
             {
-                "filename",
-                path = 1,
-                color = { fg = "#6c7086" }, -- Dimmed text for inactive
-                symbols = {
-                    modified = " ●",
-                    readonly = " ",
-                    unnamed = "[No Name]",
-                },
+                function()
+                    local filename = vim.fn.expand("%:t")
+                    if filename == "" then
+                        return "  [No Name]"
+                    end
+
+                    local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
+                    local icon = "󰈔"
+                    if devicons_ok then
+                        icon = devicons.get_icon(filename, vim.fn.expand("%:e"), { default = true }) or "󰈔"
+                    end
+
+                    local modified = vim.bo.modified and " ●" or ""
+                    return string.format("  %s %s%s", icon, filename, modified)
+                end,
+                color = { fg = "#6c7086" },
+                padding = { left = 1, right = 1 },
             },
         },
     },
