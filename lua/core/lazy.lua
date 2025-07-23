@@ -189,6 +189,11 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
     },
+    {
+        "joshdick/onedark.vim",
+        lazy = false,
+        priority = 1000,
+    },
 
     -- Make your life easier
     {
