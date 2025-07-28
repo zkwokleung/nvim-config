@@ -53,7 +53,10 @@ require("lualine").setup({
             "branch",
             "diff",
             "diagnostics",
-            "filename",
+            {
+                "filename",
+                path = 1,
+            },
         },
         lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_y = { "progress" },

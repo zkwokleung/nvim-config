@@ -23,6 +23,7 @@ local ui = {
     "ui/commandbar",
     "ui/comments",
     "ui/dashboard",
+    "ui/gitsigns",
     "ui/indent",
     "ui/statusline",
     "ui/theme",
