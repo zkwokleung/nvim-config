@@ -165,17 +165,8 @@ require("lazy").setup({
 
     -- Comments
     {
-        "numToStr/Comment.nvim",
-    },
-    {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-    {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-    },
-    {
-        "preservim/nerdcommenter",
     },
 
     -- Theme
@@ -281,8 +272,17 @@ require("lazy").setup({
                     },
                     live_grep = {
                         additional_args = function()
-                            return { "--hidden", "--glob", "!**/.git/*" }
+                            return {
+                                "--hidden",
+                                "--glob",
+                                "!**/.git/*",
+                                "--glob",
+                                "!**/node_modules/*",
+                                "--glob",
+                                "!**/.cache/*",
+                            }
                         end,
+                        hidden = true,
                     },
                 },
             })

@@ -16,7 +16,6 @@ local lang = {
     "lang/lint",
     "lang/fmt",
     "lang/snippet",
-    "lang/comments",
 }
 
 local ui = {
