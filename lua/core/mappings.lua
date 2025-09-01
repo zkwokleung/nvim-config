@@ -31,24 +31,24 @@ map("n", "<Leader><Space>", "<cmd>nohl<CR>", opts)
 map("n", "<Leader>?", "<cmd>ALEFixSuggest<CR>", opts)
 
 -- Buffer
-map("n", "<Leader>,", "<cmd>BufferPrevious<CR>", opts)
-map("n", "<Leader>.", "<cmd>BufferNext<CR>", opts)
+map("n", "<C-b>,", "<cmd>BufferPrevious<CR>", opts)
+map("n", "<C-b>.", "<cmd>BufferNext<CR>", opts)
 
 -- Buffer Navigation
-map("n", "<Leader><", "<cmd>BufferMovePrevious<CR>", opts)
-map("n", "<Leader>>", "<cmd>BufferMoveNext<CR>", opts)
-map("n", "<Leader>o", "<cmd>BufferCloseAllButCurrent<CR>", opts)
-map("n", "<Leader>c", "<cmd>BufferClose<CR>", opts)
+map("n", "<C-b><", "<cmd>BufferMovePrevious<CR>", opts)
+map("n", "<C-b>>", "<cmd>BufferMoveNext<CR>", opts)
+map("n", "<C-b>o", "<cmd>BufferCloseAllButCurrent<CR>", opts)
+map("n", "<C-b>c", "<cmd>BufferClose<CR>", opts)
 
 -- Magic buffer-picking mode
-map("n", "<Leader>p", "<cmd>BufferPick<CR>", opts)
+map("n", "<C-b>p", "<cmd>BufferPick<CR>", opts)
 -- Sort automatically by...
 map("n", "<Space>bb", "<cmd>BufferOrderByBufferNumber<CR>", opts)
 map("n", "<Space>bd", "<cmd>BufferOrderByDirectory<CR>", opts)
 map("n", "<Space>bl", "<cmd>BufferOrderByLanguage<CR>", opts)
 
 -- Toggle Neotree
-map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
+map("n", "<Leader>e", "<cmd>Neotree toggle<CR>", opts)
 
 -- Telescope finder
 map({ "n", "v", "i" }, "<C-p>", "<cmd>Telescope find_files<CR>", opts)

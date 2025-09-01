@@ -53,17 +53,17 @@ barbar.setup({
     minimum_length = 0,
     semantic_letters = true,
     sidebar_filetypes = {
-        ["neo-tree"] = { 
-            event = "BufWipeout", 
-            text = "  Explorer", 
+        ["neo-tree"] = {
+            event = "BufWipeout",
+            text = "  Explorer",
             align = "left",
             offset = {
                 width = 30,
                 margin = 1,
             },
         },
-        NvimTree = { 
-            text = "  File Explorer", 
+        NvimTree = {
+            text = "  File Explorer",
             align = "left",
             offset = {
                 width = 30,
@@ -84,9 +84,9 @@ barbar.setup({
         ["dapui_stacks"] = false,
         ["dapui_breakpoints"] = false,
         ["dapui_scopes"] = false,
-        Outline = { 
-            event = "BufWinLeave", 
-            text = "  Symbols", 
+        Outline = {
+            event = "BufWinLeave",
+            text = "  Symbols",
             align = "right",
             offset = {
                 width = 30,
