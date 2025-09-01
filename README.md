@@ -15,27 +15,32 @@ A comprehensive and well-organized Neovim configuration focused on modern develo
 ### Installation
 
 1. **Backup your existing configuration** (if any):
+
    ```bash
    mv ~/.config/nvim ~/.config/nvim.backup
    ```
 
 2. **Clone this repository**:
+
    ```bash
    git clone <your-repo-url> ~/.config/nvim
    ```
 
 3. **Install using the bootstrap script**:
+
    ```bash
    cd ~/.config/nvim
    ./bootstrap.sh
    ```
 
    Or force install:
+
    ```bash
    ./bootstrap.sh --force
    ```
 
 4. **Launch Neovim**:
+
    ```bash
    nvim
    ```
@@ -100,11 +105,13 @@ nvim-config/
 ## 🔌 Installed Plugins
 
 ### Package Management
+
 - **mason.nvim** - Portable package manager for LSP servers, linters, and formatters
 - **mason-tool-installer.nvim** - Automatic tool installation
 - **mason-lspconfig.nvim** - LSP server management
 
 ### Language Support & LSP
+
 - **nvim-lspconfig** - Neovim LSP configuration
 - **nvim-cmp** - Autocompletion engine with multiple sources:
   - `cmp-buffer` - Buffer completions
@@ -117,6 +124,7 @@ nvim-config/
 - **inc-rename.nvim** - Live, incremental LSP renaming
 
 #### Supported Language Servers
+
 - **clangd** - C/C++
 - **cmake** - CMake
 - **cssls** - CSS
@@ -128,6 +136,7 @@ nvim-config/
 - **intelephense** - PHP
 
 #### Linters
+
 - **ast-grep** - Multi-language structural search
 - **stylelint** - CSS/SCSS
 - **eslint_d** - JavaScript/TypeScript (fast)
@@ -139,6 +148,7 @@ nvim-config/
 - **phpstan** - PHP
 
 #### Formatters
+
 - **clang-format** - C/C++
 - **prettier** - Web technologies
 - **google-java-format** - Java
@@ -149,6 +159,7 @@ nvim-config/
 - **stylua** - Lua
 
 ### Debugging
+
 - **nvim-dap** - Debug Adapter Protocol client
 - **nvim-dap-ui** - UI for nvim-dap
 - **nvim-dap-virtual-text** - Virtual text for debugging
@@ -156,12 +167,14 @@ nvim-config/
 - **trouble.nvim** - Diagnostics and quickfix list
 
 ### Code Intelligence
+
 - **nvim-treesitter** - Syntax highlighting and text objects
 - **LuaSnip** - Snippet engine
 - **nvim-lint** - Asynchronous linting
 - **formatter.nvim** - Code formatting (with LSP formatting integration)
 
 ### UI & Interface
+
 - **alpha-nvim** - Dashboard/start screen
 - **neo-tree.nvim** - File explorer with modern UI
 - **lualine.nvim** - Status line
@@ -178,10 +191,8 @@ nvim-config/
 - **headlines.nvim** - Pretty markdown/Org headers
 
 ### Code Editing & Navigation
-- **Comment.nvim** - Smart commenting
-- **nvim-ts-context-commentstring** - Context-aware commenting
+
 - **todo-comments.nvim** - Highlight and search TODO comments
-- **nerdcommenter** - Advanced commenting utilities
 - **vim-surround** - Surround text objects
 - **nvim-autopairs** - Auto-close brackets and quotes
 - **vim-visual-multi** - Multiple cursors
@@ -190,6 +201,7 @@ nvim-config/
 - **nvim-context-vt** - Shows current code context at top
 
 ### Productivity Tools
+
 - **fzf** - Fuzzy finder (fallback)
 - **telescope.nvim** - Extensible fuzzy finder & pickers
 - **harpoon** - Quick file bookmarking & navigation
@@ -198,12 +210,12 @@ nvim-config/
 - **ale** - Asynchronous Lint Engine
 - **dense-analysis/ale** - Additional linting and fixing
 
-
 ## ⌨️ Key Mappings
 
 The configuration uses `;` as the leader key and includes mappings for:
 
 ### Trouble (Diagnostics)
+
 - `<leader>xx` - Toggle diagnostics
 - `<leader>xX` - Toggle buffer diagnostics
 - `<leader>cs` - Toggle symbols
@@ -212,6 +224,7 @@ The configuration uses `;` as the leader key and includes mappings for:
 - `<leader>xQ` - Toggle quickfix list
 
 ### File Operations
+
 - `<C-p>` - Telescope file finder
 - `<leader>/` - Live grep with Telescope
 - `<leader>fb` - List open buffers with Telescope
@@ -222,11 +235,13 @@ The configuration uses `;` as the leader key and includes mappings for:
 - `<leader>ca` - LSP code actions
 
 ### Harpoon
+
 - `<leader>ha` - Add file to Harpoon list
 - `<leader>hm` - Toggle Harpoon menu
 - `<leader>h1` … `<leader>h4` - Jump to files 1-4
 
 ### Buffer Management
+
 - `<leader>p` - Buffer pick (interactive buffer selection)
 - `<leader>c` - Close current buffer
 - `<leader>,` - Previous buffer
@@ -234,14 +249,14 @@ The configuration uses `;` as the leader key and includes mappings for:
 - `<leader><` - Move buffer left
 - `<leader>>` - Move buffer right
 
-
-*For complete key mappings, see `lua/core/mappings.lua`*
+_For complete key mappings, see `lua/core/mappings.lua`_
 
 ## 🛠️ Customization
 
 ### Adding New Plugins
 
 1. Add the plugin to `lua/core/lazy.lua`:
+
    ```lua
    {
        "author/plugin-name",
@@ -266,6 +281,7 @@ The configuration uses `;` as the leader key and includes mappings for:
 ### Changing Theme
 
 Modify `lua/ui/theme.lua` to use a different colorscheme:
+
 ```lua
 vim.cmd([[colorscheme your-preferred-theme]])
 ```
@@ -273,23 +289,18 @@ vim.cmd([[colorscheme your-preferred-theme]])
 ## 🔍 Troubleshooting
 
 ### Plugin Installation Issues
+
 - Run `:Lazy sync` to synchronize plugins
 - Run `:Lazy clean` to remove unused plugins
 - Check `:Lazy log` for installation logs
 
 ### LSP Issues
+
 - Run `:Mason` to check installed tools
 - Use `:LspInfo` to check LSP server status
 - Run `:MasonToolsInstall` to reinstall tools
 
 ### Performance Issues
+
 - Use `:Lazy profile` to check plugin loading times
 - Consider lazy-loading plugins with `lazy = true` option
-
-## 📝 License
-
-This configuration is provided as-is for educational and personal use.
-
-## 🤝 Contributing
-
-Feel free to fork this configuration and adapt it to your needs. If you find improvements or fixes, contributions are welcome!
