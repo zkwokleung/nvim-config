@@ -31,21 +31,11 @@ map("n", "<Leader><Space>", "<cmd>nohl<CR>", opts)
 map("n", "<Leader>?", "<cmd>ALEFixSuggest<CR>", opts)
 
 -- Buffer
-map("n", "<C-b>,", "<cmd>BufferPrevious<CR>", opts)
-map("n", "<C-b>.", "<cmd>BufferNext<CR>", opts)
-
--- Buffer Navigation
-map("n", "<C-b><", "<cmd>BufferMovePrevious<CR>", opts)
-map("n", "<C-b>>", "<cmd>BufferMoveNext<CR>", opts)
-map("n", "<C-b>o", "<cmd>BufferCloseAllButCurrent<CR>", opts)
-map("n", "<C-b>c", "<cmd>BufferClose<CR>", opts)
-
--- Magic buffer-picking mode
-map("n", "<C-b>p", "<cmd>BufferPick<CR>", opts)
--- Sort automatically by...
-map("n", "<Space>bb", "<cmd>BufferOrderByBufferNumber<CR>", opts)
-map("n", "<Space>bd", "<cmd>BufferOrderByDirectory<CR>", opts)
-map("n", "<Space>bl", "<cmd>BufferOrderByLanguage<CR>", opts)
+map("n", "<Space>,", "<cmd>BufferPrevious<CR>", opts)
+map("n", "<Space>.", "<cmd>BufferNext<CR>", opts)
+map("n", "<Space>o", "<cmd>BufferCloseAllButCurrent<CR>", opts)
+map("n", "<Space>c", "<cmd>BufferClose<CR>", opts)
+map("n", "<Space>p", "<cmd>BufferPick<CR>", opts)
 
 -- Toggle Neotree
 map("n", "<Leader>e", "<cmd>Neotree toggle<CR>", opts)
@@ -54,35 +44,35 @@ map("n", "<Leader>e", "<cmd>Neotree toggle<CR>", opts)
 map({ "n", "v", "i" }, "<C-p>", "<cmd>Telescope find_files<CR>", opts)
 
 -- Telescope additional pickers
-map("n", "<leader>/", "<cmd>Telescope live_grep<CR>", opts)
+map("n", "<Leader>/", "<cmd>Telescope live_grep<CR>", opts)
 
 -- Harpoon mappings
-map("n", "<leader>ha", function()
+map("n", "<Leader>ha", function()
     require("harpoon.mark").add_file()
 end, opts)
-map("n", "<leader>hm", function()
+map("n", "<Leader>hm", function()
     require("harpoon.ui").toggle_quick_menu()
 end, opts)
-map("n", "<leader>h1", function()
+map("n", "<Leader>h1", function()
     require("harpoon.ui").nav_file(1)
 end, opts)
-map("n", "<leader>h2", function()
+map("n", "<Leader>h2", function()
     require("harpoon.ui").nav_file(2)
 end, opts)
-map("n", "<leader>h3", function()
+map("n", "<Leader>h3", function()
     require("harpoon.ui").nav_file(3)
 end, opts)
-map("n", "<leader>h4", function()
+map("n", "<Leader>h4", function()
     require("harpoon.ui").nav_file(4)
 end, opts)
 
 -- LSP Rename
 -- Incremental Rename (inc-rename)
-map("n", "<leader>r", function()
+map("n", "<Leader>r", function()
     return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
 -- Quick code action
-map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+map("n", "<Leader>.", vim.lsp.buf.code_action, opts)
 
 -- Disable command-line window
 map("n", "q:", "<nop>", opts)
