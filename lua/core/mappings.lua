@@ -9,16 +9,14 @@ map("n", "<A-j>", "<cmd>m .+1<CR>==", opts)
 map("n", "<A-k>", "<cmd>m .-2<CR>==", opts)
 map("i", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", opts)
 map("i", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", opts)
-map("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
-map("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Copy lines up
 map("n", "<A-J>", "<cmd>copy .<CR>==", opts)
 map("n", "<A-K>", "<cmd>copy .-1<CR>==", opts)
 map("i", "<A-J>", "<Esc><cmd>copy .-1<CR>==gi", opts)
 map("i", "<A-K>", "<Esc><cmd>copy .<CR>==gi", opts)
-map("v", "<A-J>", "<cmd>copy '>-1<CR>gv=gv", opts)
-map("v", "<A-K>", "<cmd>copy '<<CR>gv=gv", opts)
 
 -- Create new line
 map("i", "<C-j>", "<Esc>o", opts)
@@ -26,9 +24,6 @@ map("i", "<C-k>", "<Esc>O", opts)
 
 -- Escaping
 map("n", "<Leader><Space>", "<cmd>nohl<CR>", opts)
-
--- ALE fix
-map("n", "<Leader>?", "<cmd>ALEFixSuggest<CR>", opts)
 
 -- Buffer
 map("n", "<Space>,", "<cmd>BufferPrevious<CR>", opts)
@@ -71,6 +66,7 @@ end, opts)
 map("n", "<Leader>r", function()
     return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
+
 -- Quick code action
 map("n", "<Leader>.", vim.lsp.buf.code_action, opts)
 
