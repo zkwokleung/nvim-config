@@ -268,6 +268,12 @@ require("lazy").setup({
                             "!**/.cache/*",
                             "--glob",
                             "!**/.local/share/*",
+                            "--glob",
+                            "!lazy-lock.json",
+                            "--glob",
+                            "!package-lock.json",
+                            "--glob",
+                            "!pnpm-lock.yaml",
                         },
                     },
                     live_grep = {
