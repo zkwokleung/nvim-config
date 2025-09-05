@@ -32,6 +32,7 @@ local ui = {
 local plugins = {
     "plugins/treesitter",
     "plugins/barbar",
+    "plugins/neo-tree",
 }
 
 local helper = {
