@@ -17,17 +17,6 @@ smart_splits.setup({
 
     -- When swapping buffers between windows, follow the buffer with the cursor
     -- cursor_follows_swapped_bufs = false,
-
-    -- Resize mode: press one of the keys below repeatedly to resize
-    -- resize_mode = {
-    --     quit_key = "<ESC>",
-    --     resize_keys = { "h", "j", "k", "l" },
-    --     silent = false,
-    --     hooks = {
-    --         on_enter = nil,
-    --         on_leave = nil,
-    --     },
-    -- },
 })
 
 local map = vim.keymap.set
@@ -40,10 +29,10 @@ local ss = smart_splits
 -- map("n", "<C-\\>", ss.move_cursor_previous)
 
 -- Resizing splits
--- map("n", "<A-h>", ss.resize_left)
--- map("n", "<A-j>", ss.resize_down)
--- map("n", "<A-k>", ss.resize_up)
--- map("n", "<A-l>", ss.resize_right)
+map("n", "<C-Left>", ss.resize_left)
+map("n", "<C-Down>", ss.resize_down)
+map("n", "<C-Up>", ss.resize_up)
+map("n", "<C-Right>", ss.resize_right)
 
 -- Swapping buffers between windows
 -- map("n", "<leader><leader>h", ss.swap_buf_left)
