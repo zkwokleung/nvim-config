@@ -83,6 +83,11 @@ require("lazy").setup({
         "kshenoy/vim-signature",
     },
 
+    -- Windows Management
+    {
+        "mrjones2014/smart-splits.nvim",
+    },
+
     -- Completion
     {
         "folke/noice.nvim",

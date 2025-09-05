@@ -33,6 +33,7 @@ local plugins = {
     "plugins/treesitter",
     "plugins/barbar",
     "plugins/neo-tree",
+    "plugins/smart-splits",
 }
 
 local helper = {
