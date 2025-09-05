@@ -22,6 +22,10 @@ map("i", "<A-K>", "<Esc><cmd>copy .<CR>==gi", opts)
 map("i", "<C-j>", "<Esc>o", opts)
 map("i", "<C-k>", "<Esc>O", opts)
 
+-- Windows Management
+map("n", "<C-w>-", "<cmd>wincmd s<CR>")
+map("n", "<C-w>_", "<cmd>wincmd v<CR>")
+
 -- Escaping
 map("n", "<Leader><Space>", "<cmd>nohl<CR>", opts)
 
