@@ -374,6 +374,11 @@ require("lazy").setup({
         },
         opts = {},
     },
+
+    -- Copilot
+    {
+        "github/copilot.vim",
+    }
 }, {
     concurrency = 8,
     performance = {
