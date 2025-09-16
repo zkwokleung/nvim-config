@@ -7,6 +7,7 @@ M.lsps = {
     "bashls",
     "pyright",
     "eslint",
+    "jsonls",
     "ts_ls",
     "tailwindcss",
     "intelephense",
