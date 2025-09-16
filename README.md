@@ -212,7 +212,7 @@ nvim-config/
 
 ## ⌨️ Key Mappings
 
-The configuration uses `;` as the leader key and includes mappings for:
+The configuration uses `;` as the leader key. Below are the active mappings from the config and plugin specs.
 
 ### Trouble (Diagnostics)
 
@@ -223,33 +223,60 @@ The configuration uses `;` as the leader key and includes mappings for:
 - `<leader>xL` - Toggle location list
 - `<leader>xQ` - Toggle quickfix list
 
-### File Operations
+### Search & Files
 
-- `<C-p>` - Telescope file finder
-- `<leader>/` - Live grep with Telescope
-- `<leader>fb` - List open buffers with Telescope
-- `<leader>fh` - Help tags picker
-- `<leader>f` - Global search & replace (Spectre)
+- `<C-p>` - Find files (Telescope)
+- `<leader>/` - Live grep (Telescope)
+- `<leader>f` - Search & replace panel (Spectre)
 - `<leader>e` - Toggle Neo-tree file explorer
-- `<leader>r` - Incremental LSP rename
-- `<leader>ca` - LSP code actions
+
+### LSP
+
+- `<leader>r` - Incremental rename (inc-rename)
+- `<leader>ca` - Code actions (on LSP attach)
+- `<leader>.` - Code actions (global)
+- `gd` / `gD` - Go to definition / declaration
+- `gr` - List references
+- `K` - Hover documentation
 
 ### Harpoon
 
 - `<leader>ha` - Add file to Harpoon list
 - `<leader>hm` - Toggle Harpoon menu
-- `<leader>h1` … `<leader>h4` - Jump to files 1-4
+- `<leader>h1` … `<leader>h4` - Jump to files 1–4
 
-### Buffer Management
+### Buffer Management (barbar.nvim)
 
-- `<leader>p` - Buffer pick (interactive buffer selection)
-- `<leader>c` - Close current buffer
-- `<leader>,` - Previous buffer
-- `<leader>.` - Next buffer
-- `<leader><` - Move buffer left
-- `<leader>>` - Move buffer right
+- `<Space>p` - Buffer pick (interactive)
+- `<Space>c` - Close current buffer
+- `<Space>o` - Close all but current
+- `<Space>,` - Previous buffer
+- `<Space>.` - Next buffer
 
-_For complete key mappings, see `lua/core/mappings.lua`_
+### Windows
+
+- `<C-w>-` - Horizontal split
+- `<C-w>_` - Vertical split
+- `<C-Left>/<C-Down>/<C-Up>/<C-Right>` - Resize splits
+
+### Editing
+
+- `<leader>d` - Delete without yanking
+- `Alt-j` / `Alt-k` - Move line/selection down/up
+- `Alt-J` / `Alt-K` - Copy line down/up
+- `Insert` mode: `<C-j>` new line below, `<C-k>` new line above
+- `<leader><Space>` - Clear search highlights
+
+### Navigation (Flash)
+
+- `s` - Flash jump (normal/visual/operator-pending)
+- `<leader>s` - Flash treesitter jump
+
+### Misc
+
+- `q:` - Disabled (no-op)
+
+_For complete key mappings, see `lua/core/mappings.lua`, `lua/lang/lsp.lua`, and relevant plugin specs in `lua/core/lazy.lua`._
 
 ## 🛠️ Customization
 
