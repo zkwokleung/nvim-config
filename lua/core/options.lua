@@ -15,7 +15,7 @@ local options = {
 		cursorline = true, -- highlight the text line of the cursor
 		expandtab = true, -- enable the use of space in tab
 		fileencoding = "utf-8", -- file content encoding for the buffer
-		fillchars = { eob = " " }, -- disable `~` on nonexistent lines
+		fillchars = { eob = " ", vert = "▎", }, -- disable `~` on nonexistent lines
 		foldenable = true, -- enable fold for nvim-ufo
 		foldlevel = 99, -- set high foldlevel for nvim-ufo
 		foldlevelstart = 99, -- start with all code unfolded
