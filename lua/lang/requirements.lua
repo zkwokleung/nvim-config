@@ -11,6 +11,7 @@ M.lsps = {
     "ts_ls",
     "tailwindcss",
     "intelephense",
+    "gopls",
 }
 
 M.linters = {
@@ -24,6 +25,7 @@ M.linters = {
     "vint",
     "yamllint",
     "phpstan",
+    "golangci-lint",
 }
 
 M.linters_by_ft = {
@@ -31,6 +33,7 @@ M.linters_by_ft = {
     c = { "ast-grep" },
     cpp = { "ast-grep" },
     css = { "stylelint" },
+    go = { "golangci-lint" },
     html = { "ast-grep" },
     java = { "ast-grep" },
     javascript = { "eslint_d" },
@@ -53,6 +56,7 @@ M.linters_by_ft = {
 M.fmts = {
     "clang-format",
     "prettier",
+    "gofumpt",
     "google-java-format",
     "ktlint",
     "latexindent",
