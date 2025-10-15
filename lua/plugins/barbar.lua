@@ -57,26 +57,14 @@ barbar.setup({
             event = "BufWipeout",
             text = "  Explorer",
             align = "left",
-            offset = {
-                width = 30,
-                margin = 1,
-            },
         },
         NvimTree = {
             text = "  File Explorer",
             align = "left",
-            offset = {
-                width = 30,
-                margin = 1,
-            },
         },
         undotree = {
             text = "  Undo Tree",
             align = "center",
-            offset = {
-                width = 30,
-                margin = 1,
-            },
         },
         ["dap-repl"] = false,
         ["dapui_console"] = false,
