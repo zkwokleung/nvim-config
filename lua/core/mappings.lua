@@ -39,6 +39,9 @@ map("n", "<Space>p", "<cmd>BufferPick<CR>", opts)
 -- Toggle Neotree
 map("n", "<Leader>e", "<cmd>Neotree toggle<CR>", opts)
 
+-- Toggle Undotree
+map("n", "<Leader>z", "<cmd>UndotreeToggle<CR>", opts)
+
 -- Telescope finder
 map({ "n", "v", "i" }, "<C-p>", "<cmd>Telescope find_files<CR>", opts)
 

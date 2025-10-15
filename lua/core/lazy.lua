@@ -216,6 +216,9 @@ require("lazy").setup({
     {
         "folke/which-key.nvim",
     },
+    {
+        "mbbill/undotree",
+    },
 
     -- UI Polish Plugins
     {
