@@ -52,9 +52,8 @@ require("lazy").setup({
         cmd = "Neotree",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
-            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         },
     },
     {
@@ -197,9 +196,6 @@ require("lazy").setup({
         branch = "master",
     },
     {
-        "junegunn/fzf",
-    },
-    {
         "romgrk/barbar.nvim",
         dependencies = {
             "lewis6991/gitsigns.nvim",
@@ -242,11 +238,19 @@ require("lazy").setup({
     -- Navigation & Productivity
     {
         "nvim-telescope/telescope.nvim",
-        branch = "0.1.x",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        ersion = "*",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            -- optional but recommended
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        },
         cmd = "Telescope",
         keys = {
-            { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Telescope Find Files" },
+            {
+                "<C-p>",
+                "<cmd>Telescope find_files<cr>",
+                desc = "Telescope Find Files",
+            },
         },
         config = function()
             require("telescope").setup({
@@ -385,6 +389,8 @@ require("lazy").setup({
 }, {
     concurrency = 8,
     performance = {
-        cache = { enabled = true },
+        cache = {
+            enabled = true,
+        },
     },
 })
