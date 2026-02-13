@@ -3,6 +3,18 @@ local autocmd = vim.api.nvim_create_autocmd
 local cmd = vim.api.nvim_create_user_command
 local namespace = vim.api.nvim_create_namespace
 
+-- Custom filetype overrides to ensure linters/formatters pick the right tool
+vim.filetype.add({
+    filename = {
+        [".prettierrc"] = "jsonc",
+    },
+    extension = {
+        [ "mts" ] = "typescript",
+        [ "mjs" ] = "javascript",
+        prettierrc = "jsonc",
+    },
+})
+
 -- * Groups
 local filetypes_group = augroup("filetypes", { clear = true })
 local indent_group = augroup("indent", { clear = true })
