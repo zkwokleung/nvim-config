@@ -75,6 +75,10 @@ require("formatter").setup {
             require("formatter.filetypes.json").prettier,
         },
 
+        jsonc = {
+            require("formatter.filetypes.json").prettier,
+        },
+
         kotlin = {
             require("formatter.filetypes.kotlin").ktlint,
         },
