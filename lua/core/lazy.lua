@@ -27,16 +27,6 @@ require("lazy").setup({
         },
     },
 
-    -- Lint
-    {
-        "mfussenegger/nvim-lint",
-    },
-
-    -- Formatter
-    {
-        "mhartington/formatter.nvim",
-    },
-
     -- UI
     {
         "goolord/alpha-nvim",
@@ -349,10 +339,6 @@ require("lazy").setup({
     },
 
     -- LSP Enhancements
-    {
-        "nvimtools/none-ls.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
     {
         "ray-x/lsp_signature.nvim",
         event = "LspAttach",

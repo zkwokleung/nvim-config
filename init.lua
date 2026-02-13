@@ -13,8 +13,7 @@ local core = {
 
 local lang = {
     "lang/lsp",
-    "lang/lint",
-    "lang/fmt",
+    "lang/ale",
     "lang/snippet",
 }
 

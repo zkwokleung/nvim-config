@@ -51,16 +51,6 @@ autocmd({ "BufEnter", "BufRead" }, {
     end,
 })
 
--- Format on save
-autocmd({ "BufWritePre" }, {
-    desc = "Format on save using LSP",
-    group = files_group,
-    callback = function()
-        -- Use LSP formatting instead of formatter.nvim to avoid conflicts
-        vim.lsp.buf.format({ async = false, timeout_ms = 2000 })
-    end,
-})
-
 -- Indent
 autocmd({ "BufReadPre", "BufNewFile" }, {
     desc = "Enable Treesitter highlighting",
@@ -75,14 +65,6 @@ autocmd({ "BufReadPre", "BufNewFile" }, {
     end,
 })
 
--- Lint
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-    group = files_group,
-    callback = function()
-        pcall(require("lint").try_lint)
-    end,
-})
-
 -- Highlight on yank
 autocmd("TextYankPost", {
     group = files_group,
@@ -90,8 +72,3 @@ autocmd("TextYankPost", {
         vim.highlight.on_yank({ timeout = 150 })
     end,
 })
-
--- Create AutoFormat command for compatibility
-vim.api.nvim_create_user_command("AutoFormat", function()
-    vim.cmd("Format")
-end, { desc = "Format current buffer using formatter.nvim" })

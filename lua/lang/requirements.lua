@@ -17,7 +17,7 @@ M.lsps = {
 M.linters = {
     "ast-grep",
     "stylelint",
-    "eslint_d",
+    "eslint",
     "jsonlint",
     "markdownlint",
     "flake8",
@@ -36,8 +36,8 @@ M.linters_by_ft = {
     go = { "golangci-lint" },
     html = { "ast-grep" },
     java = { "ast-grep" },
-    javascript = { "eslint_d" },
-    javascriptreact = { "eslint_d" },
+    javascript = { "eslint" },
+    javascriptreact = { "eslint" },
     json = { "jsonlint" },
     kotlin = { "ast-grep" },
     lua = { "ast-grep" },
@@ -47,8 +47,8 @@ M.linters_by_ft = {
     sass = { "stylelint" },
     scss = { "stylelint" },
     sh = { "shellcheck" },
-    typescript = { "eslint_d" },
-    typescriptreact = { "eslint_d" },
+    typescript = { "eslint" },
+    typescriptreact = { "eslint" },
     vim = { "vint" },
     yaml = { "yamllint" },
 }
@@ -63,6 +63,33 @@ M.fmts = {
     "black",
     "shfmt",
     "stylua",
+}
+
+M.global_fixers = {
+    "remove_trailing_lines",
+    "trim_whitespace",
+}
+
+M.fixers_by_ft = {
+    c = { "clang-format" },
+    cpp = { "clang-format" },
+    css = { "prettier" },
+    html = { "prettier" },
+    java = { "google_java_format" },
+    javascript = { "prettier" },
+    javascriptreact = { "prettier" },
+    json = { "prettier" },
+    jsonc = { "prettier" },
+    kotlin = { "ktlint" },
+    lua = { "stylua" },
+    markdown = { "prettier" },
+    python = { "black" },
+    go = { "gofumpt" },
+    sh = { "shfmt" },
+    typescript = { "prettier" },
+    typescriptreact = { "prettier" },
+    yaml = { "prettier" },
+    zsh = { "shfmt" },
 }
 
 M.all = {}
