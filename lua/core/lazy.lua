@@ -228,7 +228,7 @@ require("lazy").setup({
     -- Navigation & Productivity
     {
         "nvim-telescope/telescope.nvim",
-        ersion = "*",
+        version = "*",
         dependencies = {
             "nvim-lua/plenary.nvim",
             -- optional but recommended
@@ -242,59 +242,6 @@ require("lazy").setup({
                 desc = "Telescope Find Files",
             },
         },
-        config = function()
-            require("telescope").setup({
-                defaults = {
-                    file_ignore_patterns = {
-                        "%.git/",
-                        "node_modules/",
-                        "%.cache/",
-                        "%.local/share/",
-                        "%.npm/",
-                        "%.cargo/",
-                    },
-                    hidden = true,
-                },
-                pickers = {
-                    find_files = {
-                        hidden = true,
-                        find_command = {
-                            "rg",
-                            "--files",
-                            "--hidden",
-                            "--glob",
-                            "!**/.git/*",
-                            "--glob",
-                            "!**/node_modules/*",
-                            "--glob",
-                            "!**/.cache/*",
-                            "--glob",
-                            "!**/.local/share/*",
-                            "--glob",
-                            "!lazy-lock.json",
-                            "--glob",
-                            "!package-lock.json",
-                            "--glob",
-                            "!pnpm-lock.yaml",
-                        },
-                    },
-                    live_grep = {
-                        additional_args = function()
-                            return {
-                                "--hidden",
-                                "--glob",
-                                "!**/.git/*",
-                                "--glob",
-                                "!**/node_modules/*",
-                                "--glob",
-                                "!**/.cache/*",
-                            }
-                        end,
-                        hidden = true,
-                    },
-                },
-            })
-        end,
     },
     {
         "folke/flash.nvim",
@@ -371,7 +318,7 @@ require("lazy").setup({
     -- Copilot
     {
         "github/copilot.vim",
-    }
+    },
 }, {
     concurrency = 8,
     performance = {

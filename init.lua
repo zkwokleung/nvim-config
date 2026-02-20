@@ -33,6 +33,7 @@ local plugins = {
     "plugins/barbar",
     "plugins/neo-tree",
     "plugins/smart-splits",
+    "plugins/telescope",
 }
 
 local helper = {
