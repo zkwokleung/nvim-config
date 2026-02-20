@@ -30,6 +30,8 @@ require("telescope").setup({
                 "!package-lock.json",
                 "--glob",
                 "!pnpm-lock.yaml",
+                "--glob",
+                "!.pnpm-store/*",
             },
         },
         live_grep = {
