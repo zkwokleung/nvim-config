@@ -26,6 +26,7 @@ end
 g.ale_disable_lsp = 1
 g.ale_completion_enabled = 0
 g.ale_linters_explicit = 1
+g.ale_use_neovim_diagnostics_api = 1
 g.ale_fix_on_save = 1
 
 g.ale_linters = build_ale_linters(linters_by_ft)
