@@ -62,16 +62,71 @@ require("lualine").setup({
         lualine_y = { "encoding" },
         lualine_z = { "filetype" },
     },
-    inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { "filename" },
-        lualine_x = { "location" },
+    inactive_sections = nil,
+    tabline = {},
+    winbar = {
+        lualine_a = {
+            {
+                "filetype",
+                icon_only = true,
+                color = { fg = "#c0caf5", bg = "#1a1b26" },
+            },
+        },
+        lualine_b = {
+            {
+                "filename",
+                path = 0,
+                symbols = {
+                    modified = " ●",
+                    readonly = " ",
+                    unnamed = "[No Name]",
+                    newfile = "[New]",
+                },
+                color = { fg = "#c0caf5", bg = "#1a1b26", gui = "bold" },
+            },
+        },
+        lualine_c = {},
+        lualine_x = {
+            {
+                "diagnostics",
+                sources = { "nvim_diagnostic" },
+                symbols = {
+                    error = "ﬀ ",
+                    warn = "󰀦 ",
+                    info = "󰋽 ",
+                    hint = "󰌶 ",
+                },
+                colored = true,
+                update_in_insert = false,
+                always_visible = false,
+            },
+        },
         lualine_y = {},
         lualine_z = {},
     },
-    tabline = {},
-    winbar = {},
-    inactive_winbar = {},
+    inactive_winbar = {
+        lualine_a = {
+            {
+                "filetype",
+                icon_only = true,
+            },
+        },
+        lualine_b = {},
+        lualine_c = {
+            {
+                "filename",
+                path = 1,
+                symbols = {
+                    modified = " ●",
+                    readonly = " ",
+                    unnamed = "[No Name]",
+                    newfile = "[New]",
+                },
+            },
+        },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+    },
     extensions = { "neo-tree", "trouble", "lazy" },
 })
