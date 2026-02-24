@@ -51,12 +51,6 @@ require("lualine").setup({
         },
         lualine_c = {
             "branch",
-            "diff",
-            "diagnostics",
-            {
-                "filename",
-                path = 1,
-            },
         },
         lualine_x = { "searchcount" },
         lualine_y = { "encoding" },
@@ -71,8 +65,6 @@ require("lualine").setup({
                 icon_only = true,
                 color = { fg = "#c0caf5", bg = "#1a1b26" },
             },
-        },
-        lualine_b = {
             {
                 "filename",
                 path = 0,
@@ -84,25 +76,16 @@ require("lualine").setup({
                 },
                 color = { fg = "#c0caf5", bg = "#1a1b26", gui = "bold" },
             },
-        },
-        lualine_c = {},
-        lualine_x = {
             {
                 "diagnostics",
-                sources = { "nvim_diagnostic" },
-                symbols = {
-                    error = "ﬀ ",
-                    warn = "󰀦 ",
-                    info = "󰋽 ",
-                    hint = "󰌶 ",
-                },
-                colored = true,
-                update_in_insert = false,
-                always_visible = false,
+                color = { fg = "#c0caf5", bg = "#1a1b26" },
             },
         },
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
         lualine_y = {},
-        lualine_z = {},
+        lualine_z = { "diff" },
     },
     inactive_winbar = {
         lualine_a = {
