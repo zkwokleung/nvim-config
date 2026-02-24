@@ -27,7 +27,7 @@ map("n", "<C-w>-", "<cmd>wincmd s<CR>")
 map("n", "<C-w>_", "<cmd>wincmd v<CR>")
 
 -- Escaping
-map("n", "<Leader><Space>", "<cmd>nohl<CR>", opts)
+map("n", "<Esc><Esc>", "<cmd>nohl<CR>", opts)
 
 -- Buffer
 map("n", "<Space>,", "<cmd>BufferPrevious<CR>", opts)
