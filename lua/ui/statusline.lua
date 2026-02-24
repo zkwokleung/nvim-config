@@ -77,6 +77,10 @@ require("lualine").setup({
                 color = { fg = "#c0caf5", bg = "#1a1b26", gui = "bold" },
             },
             {
+                "diff",
+                color = { fg = "#c0caf5", bg = "#1a1b26" },
+            },
+            {
                 "diagnostics",
                 color = { fg = "#c0caf5", bg = "#1a1b26" },
             },
@@ -85,7 +89,7 @@ require("lualine").setup({
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = { "diff" },
+        lualine_z = {},
     },
     inactive_winbar = {
         lualine_a = {
