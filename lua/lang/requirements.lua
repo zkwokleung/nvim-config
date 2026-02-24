@@ -12,6 +12,7 @@ M.lsps = {
     "tailwindcss",
     "intelephense",
     "gopls",
+    "lua-language-server",
 }
 
 M.linters = {
@@ -22,6 +23,7 @@ M.linters = {
     "markdownlint",
     "flake8",
     "shellcheck",
+    "luacheck",
     "vint",
     "yamllint",
     "phpstan",
@@ -40,7 +42,7 @@ M.linters_by_ft = {
     javascriptreact = { "eslint" },
     json = { "jsonlint" },
     kotlin = { "ast-grep" },
-    lua = { "ast-grep" },
+    lua = { "luacheck" },
     markdown = { "markdownlint" },
     php = { "phpstan" },
     python = { "flake8" },
