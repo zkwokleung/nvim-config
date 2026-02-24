@@ -33,6 +33,13 @@ require("lazy").setup({
         event = "VimEnter",
     },
     {
+        "tadaa/vimade",
+        opts = {
+            recipe = { "default", { animate = true } },
+            fadelevel = 0.5,
+        },
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
     },
