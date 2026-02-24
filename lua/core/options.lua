@@ -4,7 +4,6 @@ vim.opt.backspace:append({ "nostop" }) -- don't stop backspace at insert
 if vim.fn.has("nvim-0.9") == 1 then
     vim.opt.diffopt:append("linematch:60") -- enable linematch diff algorithm
 end
-vim.opt.undofile = true -- enable persistent undo
 
 local options = {
     opt = {
@@ -44,7 +43,7 @@ local options = {
         termguicolors = true, -- enable 24-bit RGB color in the TUI
         timeoutlen = 500, -- shorten key timeout length a little bit for which-key
         title = true, -- set terminal title to the filename and path
-        undofile = false, -- enable persistent undo
+        undofile = true, -- enable persistent undo
         updatetime = 300, -- length of time to wait before triggering the plugin
         virtualedit = "block", -- allow going past end of line in visual block mode
         wrap = true, -- wrapping of lines longer than the width of window
