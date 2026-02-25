@@ -35,6 +35,7 @@ local plugins = {
     "plugins/neo-tree",
     "plugins/smart-splits",
     "plugins/telescope",
+    "plugins/which-key",
 }
 
 local helper = {
