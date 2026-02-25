@@ -8,6 +8,13 @@ require("mason-lspconfig").setup({
 -- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+local server_overrides = {
+    -- Example:
+    -- marksman = {
+    --     settings = {},
+    -- },
+}
+
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -28,8 +35,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 for _, s in ipairs(lsps) do
-    vim.lsp.config(s, {
-        capabilities = capabilities,
-    })
+    local server_config = vim.tbl_deep_extend(
+        "force",
+        {
+            capabilities = capabilities,
+        },
+        server_overrides[s] or {}
+    )
+
+    vim.lsp.config(s, server_config)
     vim.lsp.enable(s)
 end

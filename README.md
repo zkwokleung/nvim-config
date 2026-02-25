@@ -63,11 +63,10 @@ nvim-config/
     │   └── mappings.lua     # Key mappings
     ├── lang/                # Language-specific configurations
     │   ├── requirements.lua # LSP servers, linters, and formatters list
-    │   ├── lsp.lua         # LSP configuration
-    │   ├── lint.lua        # Linting configuration
-    │   ├── fmt.lua         # Formatting configuration
-    │   ├── snippet.lua     # Snippet configuration
-    │   └── comments.lua    # Comment utilities
+    │   ├── lsp.lua          # LSP configuration and per-server overrides
+    │   ├── ale.lua          # ALE wiring (linters/fixers + ALE options)
+    │   ├── lint.lua         # ALE per-filetype/per-linter options
+    │   └── snippet.lua      # Snippet configuration
     ├── ui/                  # User interface configurations
     │   ├── theme.lua       # Colorscheme setup
     │   ├── statusline.lua  # Status line configuration
@@ -119,7 +118,6 @@ nvim-config/
   - `cmp-path` - Path completions
   - `cmp-nvim-lua` - Lua API completions
   - `cmp-cmdline` - Command line completions
-- **none-ls.nvim** - Inject external linters/formatters via a unified LSP
 - **lsp_signature.nvim** - Inline function signature help
 - **inc-rename.nvim** - Live, incremental LSP renaming
 
@@ -131,30 +129,37 @@ nvim-config/
 - **bashls** - Bash
 - **pyright** - Python
 - **eslint** - JavaScript/TypeScript linting
-- **ts_ls** - TypeScript/JavaScript
+- **vtsls** - TypeScript/JavaScript
 - **tailwindcss** - Tailwind CSS
-- **intelephense** - PHP
+- **phpactor** - PHP
+- **jsonls** - JSON
+- **gopls** - Go
+- **lua_ls** - Lua
 
 #### Linters
 
 - **ast-grep** - Multi-language structural search
 - **stylelint** - CSS/SCSS
-- **eslint_d** - JavaScript/TypeScript (fast)
+- **eslint** - JavaScript/TypeScript
+- **jsonlint** - JSON
 - **markdownlint** - Markdown
-- **flake8** - Python
+- **ruff** - Python
 - **shellcheck** - Shell scripts
+- **luacheck** - Lua
 - **vint** - Vimscript
 - **yamllint** - YAML
 - **phpstan** - PHP
+- **golangci-lint** - Go
 
 #### Formatters
 
 - **clang-format** - C/C++
 - **prettier** - Web technologies
+- **gofumpt** - Go
 - **google-java-format** - Java
 - **ktlint** - Kotlin
 - **latexindent** - LaTeX
-- **black** - Python
+- **ruff** - Python
 - **shfmt** - Shell scripts
 - **stylua** - Lua
 
@@ -170,8 +175,7 @@ nvim-config/
 
 - **nvim-treesitter** - Syntax highlighting and text objects
 - **LuaSnip** - Snippet engine
-- **nvim-lint** - Asynchronous linting
-- **formatter.nvim** - Code formatting (with LSP formatting integration)
+- **ALE** - Asynchronous linting and fixing
 
 ### UI & Interface
 
@@ -303,7 +307,8 @@ _For complete key mappings, see `lua/core/mappings.lua`, `lua/lang/lsp.lua`, and
 1. Add LSP server to `lua/lang/requirements.lua` in the `M.lsps` table
 2. Add corresponding linter to `M.linters` and `M.linters_by_ft`
 3. Add formatter to `M.fmts`
-4. The tools will be automatically installed on next Neovim startup
+4. Optional: add ALE per-linter options in `lua/lang/lint.lua`
+5. The tools will be automatically installed on next Neovim startup
 
 ### Changing Theme
 
