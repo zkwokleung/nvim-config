@@ -22,6 +22,8 @@ map("i", "<A-K>", "<Esc><cmd>copy .<CR>==gi", opts)
 map("v", "<C-f>", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
 
 -- Create new line
+map("n", "<C-j>", "gi<CR><Esc>", opts)
+map("n", "<C-k>", "gi<CR><Esc>k$", opts)
 map("i", "<C-j>", "<Esc>o", opts)
 map("i", "<C-k>", "<Esc>O", opts)
 
