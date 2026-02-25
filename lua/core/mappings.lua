@@ -18,6 +18,9 @@ map("n", "<A-K>", "<cmd>copy .-1<CR>==", opts)
 map("i", "<A-J>", "<Esc><cmd>copy .-1<CR>==gi", opts)
 map("i", "<A-K>", "<Esc><cmd>copy .<CR>==gi", opts)
 
+-- Search with selected string
+map("v", "<C-f>", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
+
 -- Create new line
 map("i", "<C-j>", "<Esc>o", opts)
 map("i", "<C-k>", "<Esc>O", opts)
