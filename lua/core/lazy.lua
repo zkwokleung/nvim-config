@@ -215,10 +215,6 @@ require("lazy").setup({
 
     -- UI Polish Plugins
     {
-        "stevearc/dressing.nvim",
-        event = "VeryLazy",
-    },
-    {
         "norcalli/nvim-colorizer.lua",
         event = "VeryLazy",
         config = function()
