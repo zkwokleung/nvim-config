@@ -48,26 +48,6 @@ map({ "n", "v", "i" }, "<C-p>", "<cmd>Telescope find_files<CR>", opts)
 -- Telescope additional pickers
 map("n", "<Leader>/", "<cmd>Telescope live_grep<CR>", opts)
 
--- Harpoon mappings
-map("n", "<Leader>ha", function()
-    require("harpoon.mark").add_file()
-end, opts)
-map("n", "<Leader>hm", function()
-    require("harpoon.ui").toggle_quick_menu()
-end, opts)
-map("n", "<Leader>h1", function()
-    require("harpoon.ui").nav_file(1)
-end, opts)
-map("n", "<Leader>h2", function()
-    require("harpoon.ui").nav_file(2)
-end, opts)
-map("n", "<Leader>h3", function()
-    require("harpoon.ui").nav_file(3)
-end, opts)
-map("n", "<Leader>h4", function()
-    require("harpoon.ui").nav_file(4)
-end, opts)
-
 -- LSP Rename
 -- Incremental Rename (inc-rename)
 map("n", "<Leader>r", function()

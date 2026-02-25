@@ -1,0 +1,35 @@
+local hp = require("harpoon")
+
+hp:setup()
+
+-- Harpoon mappings
+local map = vim.keymap.set
+map("n", "<Leader>ha", function()
+    hp:list():add()
+end)
+map("n", "<Leader>hr", function()
+    hp:list():remove()
+end)
+map("n", "<Leader>hh", function()
+    hp.ui:toggle_quick_menu(hp:list())
+end)
+
+map("n", "<Leader>h1", function()
+    hp:list():select(1)
+end)
+map("n", "<Leader>h2", function()
+    hp:list():select(2)
+end)
+map("n", "<Leader>h3", function()
+    hp:list():select(3)
+end)
+map("n", "<Leader>h4", function()
+    hp:list():select(4)
+end)
+
+map("n", "<Leader>h,", function()
+    hp:list():prev()
+end)
+map("n", "<Leader>h.", function()
+    hp:list():next()
+end)

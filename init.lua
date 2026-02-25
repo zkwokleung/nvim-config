@@ -36,6 +36,7 @@ local plugins = {
     "plugins/smart-splits",
     "plugins/telescope",
     "plugins/which-key",
+    "plugins/harpoon",
 }
 
 local helper = {
