@@ -12,7 +12,7 @@ M.lsps = {
     "tailwindcss",
     "phpactor",
     "gopls",
-    "lua-language-server",
+    "lua_ls",
 }
 
 M.linters = {
