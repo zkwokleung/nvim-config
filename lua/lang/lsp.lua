@@ -1,10 +1,10 @@
 local requirements = require("lang.requirements")
 local lsp_signature = require("lsp_signature")
 
-function get_enabled_lsps()
+function get_enabled_lsps(lsps)
     local enabled_lsps = {}
 
-    for server, config in pairs(M.lsp_servers) do
+    for server, config in pairs(lsps) do
         if config.enabled ~= false then
             table.insert(enabled_lsps, server)
         end
@@ -15,7 +15,7 @@ function get_enabled_lsps()
     return enabled_lsps
 end
 
-local lsps = get_enabled_lsps()
+local lsps = get_enabled_lsps(requirements.lsps)
 
 require("mason-lspconfig").setup({
     ensure_installed = lsps,
@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 for _, s in ipairs(lsps) do
-    local server_opts = vim.deepcopy(requirements.lsp_servers[s] or {})
+    local server_opts = vim.deepcopy(requirements.lsps[s] or {})
     server_opts.enabled = nil
 
     local server_config = vim.tbl_deep_extend("force", {

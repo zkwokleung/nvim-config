@@ -1,6 +1,6 @@
 local M = {}
 
-M.lsp_servers = {
+M.lsps = {
     clangd = {},
     cmake = {},
     cssls = {},
@@ -103,7 +103,7 @@ M.fixers_by_ft = {
 }
 
 M.all = {}
-for _, v in ipairs(M.get_enabled_lsps()) do
+for _, v in ipairs(M.lsps) do
     table.insert(M.all, v)
 end
 for _, v in ipairs(M.linters) do
