@@ -32,7 +32,11 @@ map("n", "<C-w>-", "<cmd>wincmd s<CR>")
 map("n", "<C-w>_", "<cmd>wincmd v<CR>")
 
 -- Escaping
-map("n", "<Esc><Esc>", "<cmd>nohl<CR>", opts)
+map("n", "<Esc><Esc>", function()
+    if vim.fn.exists("v:hlsearch") == 1 and vim.v.hlsearch == 1 then
+        vim.cmd("nohlsearch")
+    end
+end, opts)
 
 -- Buffer
 map("n", "<Space>,", "<cmd>BufferPrevious<CR>", opts)
