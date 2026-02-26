@@ -32,7 +32,6 @@ local plugins = {
     "plugins/treesitter",
     "plugins/barbar",
     "plugins/flash",
-    "plugins/neo-tree",
     "plugins/smart-splits",
     "plugins/telescope",
     "plugins/which-key",
