@@ -1,19 +1,27 @@
-local lsps = require("lang.requirements").lsps
+local requirements = require("lang.requirements")
 local lsp_signature = require("lsp_signature")
+
+function get_enabled_lsps()
+    local enabled_lsps = {}
+
+    for server, config in pairs(M.lsp_servers) do
+        if config.enabled ~= false then
+            table.insert(enabled_lsps, server)
+        end
+    end
+
+    table.sort(enabled_lsps)
+
+    return enabled_lsps
+end
+
+local lsps = get_enabled_lsps()
 
 require("mason-lspconfig").setup({
     ensure_installed = lsps,
 })
 
--- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-local server_overrides = {
-    -- Example:
-    -- marksman = {
-    --     settings = {},
-    -- },
-}
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
@@ -35,13 +43,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 for _, s in ipairs(lsps) do
-    local server_config = vim.tbl_deep_extend(
-        "force",
-        {
-            capabilities = capabilities,
-        },
-        server_overrides[s] or {}
-    )
+    local server_opts = vim.deepcopy(requirements.lsp_servers[s] or {})
+    server_opts.enabled = nil
+
+    local server_config = vim.tbl_deep_extend("force", {
+        capabilities = capabilities,
+    }, server_opts)
 
     vim.lsp.config(s, server_config)
     vim.lsp.enable(s)

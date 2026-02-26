@@ -1,18 +1,26 @@
 local M = {}
 
-M.lsps = {
-    "clangd",
-    "cmake",
-    "cssls",
-    "bashls",
-    "pyright",
-    "eslint",
-    "jsonls",
-    "vtsls",
-    "tailwindcss",
-    "phpactor",
-    "gopls",
-    "lua_ls",
+M.lsp_servers = {
+    clangd = {},
+    cmake = {},
+    cssls = {},
+    bashls = {},
+    pyright = {},
+    eslint = {},
+    jsonls = {},
+    vtsls = {},
+    tailwindcss = {},
+    phpactor = {},
+    gopls = {},
+    lua_ls = {
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { "vim" },
+                },
+            },
+        },
+    },
 }
 
 M.linters = {
@@ -95,7 +103,7 @@ M.fixers_by_ft = {
 }
 
 M.all = {}
-for _, v in ipairs(M.lsps) do
+for _, v in ipairs(M.get_enabled_lsps()) do
     table.insert(M.all, v)
 end
 for _, v in ipairs(M.linters) do
