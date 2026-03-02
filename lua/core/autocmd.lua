@@ -9,8 +9,8 @@ vim.filetype.add({
         [".prettierrc"] = "jsonc",
     },
     extension = {
-        [ "mts" ] = "typescript",
-        [ "mjs" ] = "javascript",
+        ["mts"] = "typescript",
+        ["mjs"] = "javascript",
         prettierrc = "jsonc",
     },
 })
@@ -45,7 +45,7 @@ autocmd({ "FileType" }, {
 autocmd({ "BufEnter", "BufRead" }, {
     desc = "Set syntax mode for custom dotfiles",
     group = files_group,
-    pattern = ".aliases,.bash_prompt,.exports,.functions,.inputrc",
+    pattern = ".*",
     callback = function()
         vim.opt.syntax = "sh"
     end,
