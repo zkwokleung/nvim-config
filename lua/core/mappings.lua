@@ -30,6 +30,18 @@ map("i", "<C-k>", "<Esc>O", opts)
 -- Windows Management
 map("n", "<C-w>-", "<cmd>wincmd s<CR>")
 map("n", "<C-w>_", "<cmd>wincmd v<CR>")
+map("n", "<up>", function()
+    vim.cmd(vim.fn.winnr("j") ~= vim.fn.winnr() and "resize -3" or "resize +3")
+end, { expr = true })
+map("n", "<down>", function()
+    vim.cmd(vim.fn.winnr("j") ~= vim.fn.winnr() and "resize +3" or "resize -3")
+end, { expr = true })
+map("n", "<left>", function()
+    vim.cmd(vim.fn.winnr("l") ~= vim.fn.winnr() and "vertical resize -3" or "vertical resize +3")
+end, { expr = true })
+map("n", "<right>", function()
+    vim.cmd(vim.fn.winnr("l") ~= vim.fn.winnr() and "vertical resize +3" or "vertical resize -3")
+end, { expr = true })
 
 -- Escaping
 map("n", "<Esc><Esc>", function()
