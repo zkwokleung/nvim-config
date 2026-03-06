@@ -51,11 +51,10 @@ map("n", "<Esc><Esc>", function()
 end, opts)
 
 -- Buffer
-map("n", "<Space>,", "<cmd>BufferPrevious<CR>", opts)
-map("n", "<Space>.", "<cmd>BufferNext<CR>", opts)
-map("n", "<Space>o", "<cmd>BufferCloseAllButCurrent<CR>", opts)
-map("n", "<Space>c", "<cmd>BufferClose<CR>", opts)
-map("n", "<Space>p", "<cmd>BufferPick<CR>", opts)
+map("n", "<C-,>", "<cmd>BufferPrevious<CR>", opts)
+map("n", "<C-.>", "<cmd>BufferNext<CR>", opts)
+map("n", "<C-o>", "<cmd>BufferCloseAllButCurrent<CR>", opts)
+map("n", "<C-c>", "<cmd>BufferClose<CR>", opts)
 
 -- Toggle Neotree
 map("n", "<Leader>e", "<cmd>Neotree toggle<CR>", opts)
