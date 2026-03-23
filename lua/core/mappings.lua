@@ -62,6 +62,9 @@ map("n", "<Leader>e", "<cmd>Neotree toggle<CR>", opts)
 -- Toggle Undotree
 map("n", "<Leader>z", "<cmd>UndotreeToggle<CR>", opts)
 
+-- Show messages
+map("n", "<Leader>m", "<cmd>messages<CR>", opts)
+
 -- Telescope finder
 map({ "n", "v", "i" }, "<C-p>", "<cmd>Telescope find_files<CR>", opts)
 
