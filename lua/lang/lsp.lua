@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("n", "gD", vim.lsp.buf.declaration, opts)
         map("n", "gr", vim.lsp.buf.references, opts)
         map("n", "K", vim.lsp.buf.hover, opts)
-        map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+        map("n", "<Leader>ca", vim.lsp.buf.code_action, opts)
 
         -- lsp_signature
         lsp_signature.on_attach({ bind = true, handler_opts = { border = "rounded" } }, bufnr)
