@@ -81,7 +81,7 @@ require("lualine").setup({
             },
             {
                 "filename",
-                path = 0,
+                path = 1,
                 symbols = {
                     modified = " ●",
                     readonly = " ",
