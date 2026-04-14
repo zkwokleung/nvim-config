@@ -12,6 +12,7 @@ M.lsps = {
     tailwindcss = {},
     phpactor = {},
     gopls = {},
+    kotlin_language_server = {},
     lua_ls = {
         settings = {
             Lua = {
@@ -36,6 +37,7 @@ M.linters = {
     "yamllint",
     "phpstan",
     "golangci-lint",
+    "ktlint",
 }
 
 M.linters_by_ft = {
@@ -49,7 +51,7 @@ M.linters_by_ft = {
     javascript = { "eslint" },
     javascriptreact = { "eslint" },
     json = { "jsonlint" },
-    kotlin = { "ast-grep" },
+    kotlin = { "ktlint" },
     lua = { "luacheck" },
     markdown = { "markdownlint" },
     php = { "phpstan", "phpactor" },

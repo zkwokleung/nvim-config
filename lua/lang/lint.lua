@@ -7,6 +7,9 @@ local markdownlint_config = lint_config_dir .. "/.markdownlint.jsonc"
 local yamllint_config = lint_config_dir .. "/yamllint.yml"
 
 M.ale_linter_options_by_ft = {
+    kotlin = {
+        ktlint = "--log-level=none",
+    },
     markdown = {
         markdownlint = "--config " .. fn.shellescape(markdownlint_config),
     },
